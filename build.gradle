@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id "org.gretty" version "2.3.1"
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.ninjaframework:ninja-servlet:${ninja_version}")
+}
+
+
+
+gretty {
+    servletContainer = 'jetty9.4'
+    contextPath = ''
+    systemProperty 'ninja.mode', 'dev'
+    httpPort = 8080
+}

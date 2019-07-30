@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Java训练营-login</title>
+</head>
+<body>
+
+<div class="description">
+    <span class="slogan-desc">JAVA 训练营</span>
+</div>
+
+<!----
+<div>
+    <form class="m-t" role="form" action="/login" method="post" data-parsley-validate novalidate _lpchecked="1">
+        <div class="form-group">
+            <div class="input-group">
+                <label for="username" class="text-input">
+                    <img src="/">
+                </label>
+                <input type="text" id="username" name="username" class="form-control parsley-error" autocomplete="off"
+                       placeholder="请输入账号" >
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <label for="username" class="text-input">
+                    <img src="/">
+                </label>
+                <input type="text" id="password" name="password" class="form-control" autocomplete="off"
+                       placeholder="请输入密码">
+            </div>
+            <button type="submit" onclick="window.location.href='/'">登录1</button>
+        </div>
+    </form>
+</div>
+--->
+<form name="input" action="/login" method="get">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="pwd"><br>
+    <button onclick="validateForm()">登录ing</button>
+
+</form>
+
+<script>
+    function validateForm() {
+        var x=document.forms["input"]["username"].value;
+        var y=document.forms["input"]["pwd"].value;
+
+        if (x==null || x==""){
+            alert("用户名不能为空");
+            return false;
+        }
+        if (y==null || y==""){
+            alert("密码不能为空");
+            return false;
+        }
+        if (x=="admin" && y=="123"){
+            window.location.href='/';
+
+        }
+    }
+</script>
+</body>
+</html>
